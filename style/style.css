@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: var(--navy);
   color: var(--text-dark);
   overflow-x: hidden;
@@ -37,8 +37,9 @@ body {
 #cover {
   min-height: 100vh;
   /* Masukkan link foto Anda di url() */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('../asset-pictures/couple.png'); 
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../asset-pictures/bg.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -52,26 +53,12 @@ body {
   text-align: center;
 }
 
-
 .cover-border {
   position: absolute;
   inset: 16px;
   border: 1px solid var(--navy-mid);
   opacity: 0.15;
   pointer-events: none;
-}
-.cover-border::before {
- content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../asset-pictures/couple.png);
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  filter: grayscale();
 }
 
 /* Corner ornaments */
@@ -118,43 +105,16 @@ body {
   letter-spacing: 1px;
 }
 
-/* Garis Pembatas */
-.cover-divider {
-  width: 150px;
-  height: 1px;
-  background-color: white;
-  margin: 10px auto;
-  position: relative;
-}
-.cover-divider::before,
-.cover-divider::after {
-  content: '';
-  flex: 1;
-  height: 0.5px;
-  background: var(--navy-mid);
-  opacity: 0.4;
-}
-.cover-divider-dot {
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 /* Nama Pengantin */
 .cover-names {
   font-size: 4rem; /* Ukuran besar sesuai gambar */
-  font-family: 'Parisienne', serif; /* Atau font serupa */
+  font-family: "Parisienne", serif; /* Atau font serupa */
   margin: 20px 0;
   font-weight: 500;
 }
 
 .cover-ampersand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: clamp(1.5rem, 4vw, 2.2rem);
   color: white;
@@ -164,7 +124,7 @@ body {
 }
 
 .cover-date {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: 0.75rem;
   letter-spacing: 0.35em;
@@ -175,12 +135,13 @@ body {
 }
 
 .open-btn {
-  margin-top: 40px;
+  margin-top: 65vh;
+  display: inline-block;
   padding: 14px 48px;
   background: var(--navy);
   color: var(--gold-light);
   border: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.7rem;
   letter-spacing: 0.4em;
@@ -191,9 +152,10 @@ body {
   animation: fadeUp 0.8s ease forwards 1.1s;
   position: relative;
   overflow: hidden;
+  transform: translateX(-50%);
 }
 .open-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--navy-light);
@@ -207,7 +169,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
 
 /* ===================== MAIN INVITATION ===================== */
 #main {
@@ -225,7 +186,7 @@ body {
   overflow: hidden;
 }
 .section-bismillah::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
@@ -246,7 +207,7 @@ body {
   background-size: 56px 56px;
 }
 .bismillah-text {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(1.2rem, 4vw, 2rem);
   color: var(--gold-light);
   letter-spacing: 0.05em;
@@ -254,17 +215,17 @@ body {
 }
 
 .bismillah-sub {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   color: var(--gold);
 }
 
 .opening {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: 0.75;
   letter-spacing: 0.4em;
-  color: #091932;
+  color: bl;
   margin-top: 10px;
   opacity: 0.7;
   position: relative;
@@ -301,7 +262,7 @@ body {
   position: relative;
 }
 .section-label {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: 0.6rem;
   letter-spacing: 0.5em;
@@ -321,7 +282,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-.person-photo-ring img{
+.person-photo-ring img {
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -330,13 +291,13 @@ body {
   position: relative;
 }
 .person-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.9rem;
   color: var(--navy);
   line-height: 1;
 }
 .person-parents {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.68rem;
   color: var(--text-mid);
@@ -344,7 +305,7 @@ body {
   line-height: 1.6;
 }
 .ampersand-big {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: 3rem;
   color: white;
@@ -361,7 +322,7 @@ body {
   overflow: hidden;
 }
 .section-events::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
@@ -383,9 +344,9 @@ body {
 }
 
 .section-label-light {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
-  font-size: 0.6rem;
+  font-size: 1rem;
   letter-spacing: 0.5em;
   color: var(--gold);
   text-transform: uppercase;
@@ -394,51 +355,79 @@ body {
   position: relative;
 }
 
-.events-grid {
+ /* Styling Utama untuk Card */
+/* Container Utama */
+.event-container {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  position: relative;
-  max-width: 480px;
-  margin: 0 auto;
+  flex-direction: row; /* Membuat isi sejajar ke samping (kiri-kanan) */
+  justify-content: center; /* Menaruh kartu di tengah layar */
+  gap: 20px; /* Jarak antara kartu kiri dan kanan */
+  padding: 20px;
+  flex-wrap: wrap; /* Agar otomatis pindah ke bawah jika layar sempit (HP) */
 }
 
+/* Card Styling */
 .event-card {
-  border: 0.5px solid rgba(200, 168, 75, 0.3);
-  padding: 32px 28px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--go); /* Abu-abu sangat gelap */
+  border: 1px solid #444;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px; /* Lebar maksimal tiap kartu */
+  color: #fff;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 15px;
   text-align: center;
-  position: relative;
-  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--gold);
+  letter-spacing: 2px;
+  font-weight: 500;
 }
-.event-card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 24px;
-  right: 24px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.5;
+
+.card-body {
+  padding: 30px 15px;
+  text-align: center;
 }
-.event-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: var(--gold-light);
-  margin-bottom: 16px;
+
+.info-item {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  padding-top: 10px;
 }
-.event-detail {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 0.72rem;
-  color: rgba(200, 168, 75, 0.7);
-  letter-spacing: 0.1em;
-  line-height: 1.8;
+
+.card-isi {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid var(--gold);
+  font-size: 0.7rem;
+  color: #f4f4f4;
 }
-.event-icon {
-  width: 32px;
-  height: 32px;
-  margin: 0 auto 12px;
-  opacity: 0.5;
+
+.card-isian {
+   padding: 15px;
+  border-top: var(--gold);
+  font-size: 0.75rem;
+  color: #f4f4f4;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.card-footer {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid var(--gold);
+  font-size: 0.7rem;
+  color: #f4f4f4;
+}
+
+/* Responsive: Jika dibuka di HP (layar < 768px) */
+@media (max-width: 768px) {
+  .event-container {
+    flex-direction: column; /* Kartu akan menumpuk ke bawah */
+    align-items: center;
+  }
 }
 
 /* ===================== SECTION: COUNTDOWN ===================== */
@@ -459,41 +448,41 @@ body {
 /* Membuat Kotak Menjadi Bulat Sempurna (Sesuai Gambar) */
 .cd-box {
   background-color: var(--gold);
-  color: white;             /* Semua teks di dalam lingkaran jadi putih */
-  
+  color: white; /* Semua teks di dalam lingkaran jadi putih */
+
   /* Ukuran Lingkaran (Wajib SAMA antara width & height) */
-  width: 80px;             /* Sesuaikan ukuran lingkaran di sini */
+  width: 80px; /* Sesuaikan ukuran lingkaran di sini */
   height: 80px;
-  border-radius: 50%;       /* Kunci utama agar jadi bulat */
-  
+  border-radius: 50%; /* Kunci utama agar jadi bulat */
+
   /* Flexbox untuk memposisikan teks tepat di tengah lingkaran */
   display: flex;
-  flex-direction: column;    /* Angka di atas, label di bawah */
-  justify-content: center;   /* Rata tengah secara vertikal */
-  align-items: center;       /* Rata tengah secara horizontal */
-  
+  flex-direction: column; /* Angka di atas, label di bawah */
+  justify-content: center; /* Rata tengah secara vertikal */
+  align-items: center; /* Rata tengah secara horizontal */
+
   /* Menghapus border, hanya menggunakan background solid */
   border: none;
 }
 
 /* Styling Angka Besar (cd-num) */
 .cd-num {
-  font-size: 1.6rem;         /* Ukuran angka dibuat besar dan dominan */
-  font-weight: bold;       /* Sesuai gambar, tidak terlalu bold */
-  line-height: 1;            /* Menghilangkan jarak baris bawaan */
+  font-size: 1.6rem; /* Ukuran angka dibuat besar dan dominan */
+  font-weight: bold; /* Sesuai gambar, tidak terlalu bold */
+  line-height: 1; /* Menghilangkan jarak baris bawaan */
 }
 
 /* Styling Label Kecil (cd-label) */
 .cd-label {
-  font-size: 0.9rem;         /* Ukuran teks label lebih kecil */
-  font-weight: bold;       /* Tipis seperti di gambar */
+  font-size: 0.9rem; /* Ukuran teks label lebih kecil */
+  font-weight: bold; /* Tipis seperti di gambar */
   text-transform: lowercase; /* Memastikan teks kecil semua (hari, jam, dll) */
-  margin-top: 0px;           /* Mengatur jarak dari angka di atasnya */
+  margin-top: 0px; /* Mengatur jarak dari angka di atasnya */
 }
 
 /* Menghilangkan Pemisah Titik Dua (Sesuai Gambar) */
 .cd-sep {
-  display: none;             /* Pada gambar contoh tidak ada titik dua */
+  display: none; /* Pada gambar contoh tidak ada titik dua */
 }
 
 /* ===================== SECTION: LOCATION ===================== */
@@ -503,13 +492,13 @@ body {
   text-align: center;
 }
 .location-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.5rem;
   color: var(--navy);
   margin: 16px 0 8px;
 }
 .location-addr {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.72rem;
   color: var(--text-mid);
@@ -540,7 +529,7 @@ body {
   height: 32px;
 }
 .map-pin-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.65rem;
   color: var(--navy-mid);
@@ -551,7 +540,7 @@ body {
   padding: 12px 36px;
   border: 0.5px solid var(--navy-mid);
   color: var(--navy-mid);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.65rem;
   letter-spacing: 0.35em;
@@ -576,7 +565,7 @@ body {
   overflow: hidden;
 }
 .section-rsvp::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
@@ -609,7 +598,7 @@ body {
   border: 0.5px solid rgba(200, 168, 75, 0.3);
   padding: 14px 18px;
   color: var(--gold-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   width: 100%;
@@ -627,7 +616,7 @@ body {
   border: 0.5px solid rgba(200, 168, 75, 0.3);
   padding: 14px 18px;
   color: var(--gold-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   width: 100%;
@@ -645,7 +634,7 @@ body {
   background: var(--gold);
   border: none;
   color: var(--navy);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 0.65rem;
   letter-spacing: 0.4em;
@@ -662,7 +651,7 @@ body {
   padding: 20px;
   border: 0.5px solid var(--gold);
   color: var(--gold-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
@@ -698,7 +687,7 @@ body {
   aspect-ratio: 2/1;
 }
 .gallery-placeholder {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 0.8rem;
   color: var(--navy-mid);
   opacity: 0.4;
@@ -718,7 +707,7 @@ body {
   border: 0.5px solid rgba(26, 58, 107, 0.2);
   padding: 14px 18px;
   color: var(--navy);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   outline: none;
@@ -738,7 +727,7 @@ body {
   border: 0.5px solid rgba(26, 58, 107, 0.2);
   padding: 14px 18px;
   color: var(--navy);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   outline: none;
@@ -758,7 +747,7 @@ body {
   background: var(--navy);
   border: none;
   color: var(--gold-light);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.65rem;
   letter-spacing: 0.35em;
@@ -783,14 +772,14 @@ body {
   padding: 16px 20px;
 }
 .wish-item-name {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 0.75rem;
   color: var(--navy);
   margin-bottom: 4px;
 }
 .wish-item-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 0.72rem;
   color: var(--text-mid);
@@ -805,7 +794,7 @@ footer {
   position: relative;
 }
 footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -816,13 +805,13 @@ footer::before {
   opacity: 0.4;
 }
 .footer-names {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.3rem;
   color: var(--gold-light);
   margin-bottom: 10px;
 }
 .footer-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: 0.6rem;
   letter-spacing: 0.3em;
@@ -941,9 +930,9 @@ footer::before {
     align-items: center;
     gap: 40px;
   }
-  .events-grid {
+  /* .events-grid {
     flex-direction: row;
-  }
+  } */
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -955,14 +944,14 @@ footer::before {
 
 /* ===================== SECTION HEADING ===================== */
 .section-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(1.4rem, 4vw, 2rem);
   color: var(--navy);
   margin: 8px 0 16px;
   line-height: 1.2;
 }
 .section-heading-light {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(1.4rem, 4vw, 2rem);
   color: var(--gold-light);
   margin: 8px 0 16px;
@@ -979,7 +968,7 @@ footer::before {
 }
 .decorative-line::before,
 .decorative-line::after {
-  content: '';
+  content: "";
   flex: 1;
   height: 0.5px;
   background: currentColor;
