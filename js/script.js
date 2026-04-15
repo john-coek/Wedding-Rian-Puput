@@ -130,37 +130,23 @@ function sendWish() {
 }
 
 // Music
-let playing = true; // Set true karena ada atribut 'autoplay' di HTML kamu
-const song = document.getElementById('song');
+let playing = false;
+  const song = document.getElementById('song');
 
-function toggleMusic() {
-  const icon = document.getElementById('musicIcon');
-  
-  if (playing) {
-    // Jika sedang bunyi, maka pause
-    song.pause();
-    playing = false;
-    // Ganti ke ikon NOT BALOK (Play)
-    icon.innerHTML = `
-      <path
-        d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"
-        stroke="#c8a84b"
-        stroke-width="1.5"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    `;
-  } else {
-    // Jika sedang mati, maka play
-    song.play();
-    playing = true;
-    // Ganti ke ikon PAUSE (Dua Garis)
-    icon.innerHTML = `
-      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="#c8a84b"/>
-    `;
+  function toggleMusic() {
+    playing = !playing;
+    const icon = document.getElementById('musicIcon');
+
+    if (playing) {
+      song.play(); // <- penting
+      icon.innerHTML =
+        '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="#c8a84b"/>';
+    } else {
+      song.pause(); // <- penting
+      icon.innerHTML =
+        '<path d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z" stroke="#c8a84b" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+    }
   }
-}
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
