@@ -1,8 +1,8 @@
 :root {
-  --navy: #0d2244;
+  --navy: #0a1433;
   --navy-mid: #1a3a6b;
   --navy-light: #2a5298;
-  --gold: #c8a84b;
+  --gold: #e0c47e;
   --gold-light: #e8d5a3;
   --cream: #faf8f2;
   --cream-dark: #f0ebe0;
@@ -36,50 +36,22 @@ body {
 /* ===================== COVER PAGE ===================== */
 #cover {
   min-height: 100vh;
-  background: var(--cream);
+  /* Masukkan link foto Anda di url() */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('../asset-pictures/couple.png'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  color: white; /* Pastikan semua teks jadi putih */
+  text-align: center;
 }
 
-.batik-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.04;
-  background-image:
-    repeating-radial-gradient(
-      circle at 14px 14px,
-      var(--navy) 0,
-      var(--navy) 1px,
-      transparent 1px,
-      transparent 28px
-    ),
-    repeating-radial-gradient(
-      circle at 42px 14px,
-      var(--navy) 0,
-      var(--navy) 1px,
-      transparent 1px,
-      transparent 28px
-    ),
-    repeating-radial-gradient(
-      circle at 14px 42px,
-      var(--navy) 0,
-      var(--navy) 1px,
-      transparent 1px,
-      transparent 28px
-    ),
-    repeating-radial-gradient(
-      circle at 42px 42px,
-      var(--navy) 0,
-      var(--navy) 1px,
-      transparent 1px,
-      transparent 28px
-    );
-  background-size: 56px 56px;
-}
 
 .cover-border {
   position: absolute;
@@ -89,11 +61,17 @@ body {
   pointer-events: none;
 }
 .cover-border::before {
-  content: '';
+ content: '';
   position: absolute;
-  inset: 6px;
-  border: 0.5px solid var(--navy-mid);
-  opacity: 0.6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../asset-pictures/couple.png);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: grayscale();
 }
 
 /* Corner ornaments */
@@ -134,24 +112,19 @@ body {
 }
 
 .cover-label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 0.65rem;
-  letter-spacing: 0.5em;
-  color: var(--navy-mid);
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.3s;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
 }
 
+/* Garis Pembatas */
 .cover-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 16px auto;
-  width: 220px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.5s;
+  width: 150px;
+  height: 1px;
+  background-color: white;
+  margin: 10px auto;
+  position: relative;
 }
 .cover-divider::before,
 .cover-divider::after {
@@ -162,29 +135,29 @@ body {
   opacity: 0.4;
 }
 .cover-divider-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+  background: white;
   border-radius: 50%;
-  background: var(--navy-mid);
-  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+/* Nama Pengantin */
 .cover-names {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  font-weight: 400;
-  color: var(--navy);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 0.6s;
+  font-size: 4rem; /* Ukuran besar sesuai gambar */
+  font-family: 'Parisienne', serif; /* Atau font serupa */
+  margin: 20px 0;
+  font-weight: 500;
 }
 
 .cover-ampersand {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  color: var(--navy-light);
+  color: white;
   display: block;
   margin: 4px 0;
   opacity: 0.7;
@@ -195,7 +168,7 @@ body {
   font-weight: 200;
   font-size: 0.75rem;
   letter-spacing: 0.35em;
-  color: var(--navy-mid);
+  color: white;
   margin-top: 20px;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.9s;
@@ -235,25 +208,6 @@ body {
   z-index: 1;
 }
 
-/* ===================== BOTANICAL SVG ===================== */
-.botanical-tl {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  opacity: 0.75;
-  animation: fadeIn 1.2s ease forwards 0.4s;
-  opacity: 0;
-}
-.botanical-br {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 220px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards 0.4s;
-  transform: scale(-1);
-}
 
 /* ===================== MAIN INVITATION ===================== */
 #main {
@@ -293,21 +247,29 @@ body {
 }
 .bismillah-text {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-size: clamp(1.2rem, 4vw, 2rem);
   color: var(--gold-light);
   letter-spacing: 0.05em;
   position: relative;
 }
+
 .bismillah-sub {
   font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 0.65rem;
-  letter-spacing: 0.4em;
+  font-weight: bold;
   color: var(--gold);
+}
+
+.opening {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 0.75;
+  letter-spacing: 0.4em;
+  color: #091932;
   margin-top: 10px;
   opacity: 0.7;
   position: relative;
 }
+
 .gold-line {
   width: 80px;
   height: 0.5px;
@@ -316,6 +278,20 @@ body {
   opacity: 0.5;
   position: relative;
 }
+
+/* .gold-line p {
+  font-size: 2rem;
+  font-family: "&quot;Poppins&quot;, sans-serif";
+  font-weight: 300;
+  font-size: 0.5rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-top: 16px;
+  line-height: 1.8;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+} */
 
 /* ===================== SECTION: COUPLE ===================== */
 .section-couple {
@@ -345,34 +321,13 @@ body {
   align-items: center;
   gap: 10px;
 }
-.person-photo-ring {
-  width: 130px;
-  height: 130px;
+.person-photo-ring img{
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   border: 1.5px solid var(--navy-light);
   padding: 6px;
   position: relative;
-}
-.person-photo-ring::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 0.5px solid var(--navy-mid);
-  opacity: 0.3;
-}
-.person-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: var(--cream-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--navy-mid);
-  overflow: hidden;
 }
 .person-name {
   font-family: 'Playfair Display', serif;
@@ -392,7 +347,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 3rem;
-  color: var(--navy-light);
+  color: white;
   opacity: 0.5;
   line-height: 1;
 }
@@ -465,18 +420,9 @@ body {
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   opacity: 0.5;
 }
-.event-type {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 0.6rem;
-  letter-spacing: 0.5em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
 .event-name {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--gold-light);
   margin-bottom: 16px;
 }
@@ -501,44 +447,53 @@ body {
   background: var(--cream);
   text-align: center;
 }
+/* Container Utama: Menjaga semua lingkaran di tengah */
 .countdown-wrap {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
-.cd-box {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  min-width: 72px;
+  gap: 15px; /* Jarak antar lingkaran, sesuaikan agar tidak terlalu renggang */
+  margin-top: 20px; /* Jarak dari teks heading di atas */
 }
+
+/* Membuat Kotak Menjadi Bulat Sempurna (Sesuai Gambar) */
+.cd-box {
+  background-color: var(--gold);
+  color: white;             /* Semua teks di dalam lingkaran jadi putih */
+  
+  /* Ukuran Lingkaran (Wajib SAMA antara width & height) */
+  width: 80px;             /* Sesuaikan ukuran lingkaran di sini */
+  height: 80px;
+  border-radius: 50%;       /* Kunci utama agar jadi bulat */
+  
+  /* Flexbox untuk memposisikan teks tepat di tengah lingkaran */
+  display: flex;
+  flex-direction: column;    /* Angka di atas, label di bawah */
+  justify-content: center;   /* Rata tengah secara vertikal */
+  align-items: center;       /* Rata tengah secara horizontal */
+  
+  /* Menghapus border, hanya menggunakan background solid */
+  border: none;
+}
+
+/* Styling Angka Besar (cd-num) */
 .cd-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  color: var(--navy);
-  line-height: 1;
-  min-width: 64px;
-  text-align: center;
+  font-size: 1.6rem;         /* Ukuran angka dibuat besar dan dominan */
+  font-weight: bold;       /* Sesuai gambar, tidak terlalu bold */
+  line-height: 1;            /* Menghilangkan jarak baris bawaan */
 }
+
+/* Styling Label Kecil (cd-label) */
 .cd-label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
-  color: var(--text-light);
-  text-transform: uppercase;
-  margin-top: 6px;
+  font-size: 0.9rem;         /* Ukuran teks label lebih kecil */
+  font-weight: bold;       /* Tipis seperti di gambar */
+  text-transform: lowercase; /* Memastikan teks kecil semua (hari, jam, dll) */
+  margin-top: 0px;           /* Mengatur jarak dari angka di atasnya */
 }
+
+/* Menghilangkan Pemisah Titik Dua (Sesuai Gambar) */
 .cd-sep {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--navy-mid);
-  opacity: 0.3;
-  padding-top: 2px;
-  align-self: flex-start;
-  margin-top: 8px;
+  display: none;             /* Pada gambar contoh tidak ada titik dua */
 }
 
 /* ===================== SECTION: LOCATION ===================== */

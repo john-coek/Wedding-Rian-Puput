@@ -62,25 +62,40 @@ function scrollToSection(idx) {
 
 // Countdown
 function startCountdown() {
-  function update() {
-    const now = new Date();
-    const diff = weddingDate - now;
-    if (diff <= 0) {
-      document.getElementById('countdown').style.display = 'none';
-      document.getElementById('cd-done').style.display = 'block';
-      return;
+  // 1. Deklarasikan variabelnya di sini (Global Scope)
+  // Format: "Bulan Tanggal, Tahun Jam:Menit:Detik"
+  const weddingDate = new Date("April 23, 2026 08:00:00").getTime();
+
+  function startCountdown() {
+    function update() {
+      const now = new Date().getTime();
+      
+      // Sekarang weddingDate sudah terdefinisi dan bisa dihitung
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').style.display = 'none';
+        document.getElementById('cd-done').style.display = 'block';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+      document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
     }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
-    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+
+    update();
+    setInterval(update, 1000);
   }
-  update();
-  setInterval(update, 1000);
+
+  // JANGAN LUPA: Panggil fungsi utamanya
+  startCountdown();
 }
 
 // RSVP
